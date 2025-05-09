@@ -1,8 +1,7 @@
-﻿
-using BusinessLogic.Models;
-using System.Collections;
-using DataAccess.Repositories.Interface;
+﻿using BusinessLogic.Models;
 using DataAccess.DAO;
+using DataAccess.Repositories.Interface;
+
 namespace DataAccess.Repositories
 {
     public class SystemAccountRepository : ISystemAccountRepository
@@ -23,7 +22,7 @@ namespace DataAccess.Repositories
             return _dao.GetAccountById(id);
         }
 
-        public IEnumerable GetAllAccounts()
+        public IEnumerable<SystemAccount> GetAllAccounts()
         {
             return _dao.GetAllAccounts();
         }

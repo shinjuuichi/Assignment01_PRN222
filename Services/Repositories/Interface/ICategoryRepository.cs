@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessLogic.Models;
 
 namespace DataAccess.Repositories.Interface
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
+        IEnumerable<Category> GetAllCategories(bool includeInactive = false);
+        Category GetCategoryById(short id);
+        void AddCategory(Category category);
+        void UpdateCategory(Category category);
+        bool DeleteCategory(short id);
+        IEnumerable<Category> SearchCategories(string keyword);
     }
 }

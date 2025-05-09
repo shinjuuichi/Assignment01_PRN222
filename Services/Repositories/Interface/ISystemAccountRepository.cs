@@ -1,16 +1,10 @@
 ﻿using BusinessLogic.Models;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.Interface
 {
     public interface ISystemAccountRepository
     {
-        IEnumerable GetAllAccounts();
+        IEnumerable<SystemAccount> GetAllAccounts();
         SystemAccount GetAccountById(int id);
         void AddAccount(SystemAccount account);
         void UpdateAccount(SystemAccount account);

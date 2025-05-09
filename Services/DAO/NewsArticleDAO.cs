@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.DAO
 {
-    public class NewsAritcleDAO : SingletonBase<NewsAritcleDAO>
+    public class NewsArticleDAO : SingletonBase<NewsArticleDAO>
     {
         private FunewsManagementContext _context;
 

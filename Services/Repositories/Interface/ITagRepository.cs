@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessLogic.Models;
 
 namespace DataAccess.Repositories.Interface
 {
-    internal interface ITagRepository
+    public interface ITagRepository
     {
+        IEnumerable<Tag> GetAllTags();
+        Tag GetTagById(int id);
+        void AddTag(Tag tag);
+        void UpdateTag(Tag tag);
+        void DeleteTag(int id);
     }
 }

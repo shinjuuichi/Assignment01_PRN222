@@ -1,12 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessLogic.Models;
+using DataAccess.DAO;
+using DataAccess.Repositories.Interface;
 
 namespace DataAccess.Repositories
 {
-    internal class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
+        private readonly CategoryDAO _dao = CategoryDAO.Instance;
+        public void AddCategory(Category category)
+        {
+            _dao.AddCategory(category);
+        }
+
+        public bool DeleteCategory(short id)
+        {
+            return _dao.DeleteCategory(id);
+        }
+
+        public IEnumerable<Category> GetAllCategories(bool includeInactive)
+        {
+            return _dao.GetAllCategories(includeInactive);
+        }
+
+        public Category GetCategoryById(short id)
+        {
+            return _dao.GetCategoryById(id);
+        }
+
+        public IEnumerable<Category> SearchCategories(string keyword)
+        {
+            return _dao.SearchCategories(keyword);
+        }
+
+        public void UpdateCategory(Category category)
+        {
+            _dao.UpdateCategory(category);
+        }
     }
 }
