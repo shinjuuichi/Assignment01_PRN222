@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace DataAccess.Repositories
+
 {
-    internal class CategoryRepository
+    internal class TagRepository
     {
     }
 }

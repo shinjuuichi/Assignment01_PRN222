@@ -1,10 +1,9 @@
 ﻿
 using BusinessLogic.Models;
-using DataAccess;
-using Repositories.Interface;
 using System.Collections;
-
-namespace Repositories
+using DataAccess.Repositories.Interface;
+using DataAccess.DAO;
+namespace DataAccess.Repositories
 {
     public class SystemAccountRepository : ISystemAccountRepository
     {

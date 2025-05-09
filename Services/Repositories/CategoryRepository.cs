@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace DataAccess.Repositories
 {
-    internal class TagRepository
+    internal class CategoryRepository
     {
     }
 }

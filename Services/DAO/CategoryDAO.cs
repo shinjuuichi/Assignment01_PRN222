@@ -2,7 +2,7 @@
 using BusinessLogic.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess
+namespace DataAccess.DAO
 {
     public class CategoryDAO : SingletonBase<CategoryDAO>
     {
