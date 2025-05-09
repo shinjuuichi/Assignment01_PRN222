@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace Repositories.Interface
 {
-    internal class CategoryRepository
+    internal interface ITagRepository
     {
     }
 }

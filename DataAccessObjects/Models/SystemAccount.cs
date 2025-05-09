@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BusinessObjects;
-
+﻿namespace BusinessLogic.Models;
 public partial class SystemAccount
 {
     public short AccountId { get; set; }

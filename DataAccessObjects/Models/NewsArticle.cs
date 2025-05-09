@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BusinessObjects;
-
+﻿namespace BusinessLogic.Models;
 public partial class NewsArticle
 {
     public string NewsArticleId { get; set; } = null!;
