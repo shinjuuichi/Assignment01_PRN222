@@ -1,8 +1,9 @@
-﻿
-using BusinessLogic;
+﻿using DataAccess;
 using DataAccess.DAO;
+
 using DataAccess.Repositories.Interface;
 using DataAccess.Repositories;
+using BusinessLogic;
 
 namespace StudentNameMVC
 
@@ -13,16 +14,10 @@ namespace StudentNameMVC
         {
             services.AddSqlServer<FunewsManagementContext>(configuration.GetConnectionString("DefaultString"));
 
-            services.AddSingleton<SystemAccountDAO>();
-            services.AddSingleton<NewsArticleDAO>();
-            services.AddSingleton<CategoryDAO>();
-            services.AddSingleton<TagDAO>();
+            services.AddScoped<CategoryDAO>();
 
-            services.AddScoped<ISystemAccountRepository, SystemAccountRepository>();
-            services.AddScoped<INewsArticleRepository, NewsArticleRepository>();
+            // Register repository interface and implementation
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<ITagRepository, TagRepository>();
-
             return services;
         }
     }

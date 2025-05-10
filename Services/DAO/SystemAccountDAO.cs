@@ -10,7 +10,15 @@ namespace DataAccess.DAO
 {
     public class SystemAccountDAO : SingletonBase<SystemAccountDAO>
     {
-        private FunewsManagementContext _context;
+        private readonly FunewsManagementContext _context;
+        public SystemAccountDAO()
+        {
+
+        }
+        public SystemAccountDAO(FunewsManagementContext context)
+        {
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
 
         public IEnumerable<SystemAccount> GetAllAccounts()
         {

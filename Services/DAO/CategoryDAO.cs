@@ -10,6 +10,11 @@ namespace DataAccess.DAO
 
         public IEnumerable<Category> GetAllCategories(bool includeInactive = false)
         {
+            if (_context == null)
+            {
+                throw new InvalidOperationException("Database context is not initialized.");
+            }
+
             var query = _context.Categories
                 .Include(c => c.ParentCategory)
                 .Include(c => c.InverseParentCategory)

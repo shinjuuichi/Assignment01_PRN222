@@ -6,7 +6,16 @@ namespace DataAccess.DAO
 {
     public class NewsArticleDAO : SingletonBase<NewsArticleDAO>
     {
-        private FunewsManagementContext _context;
+        private readonly FunewsManagementContext _context;
+
+        public NewsArticleDAO()
+        {
+
+        }
+        public NewsArticleDAO(FunewsManagementContext context)
+        {
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
 
         public IEnumerable<NewsArticle> GetAllNewsArticles(bool includeInactive = false)
         {

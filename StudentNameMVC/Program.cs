@@ -1,6 +1,9 @@
+using BusinessLogic;
 using StudentNameMVC;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped(typeof(FunewsManagementContext));
 
 builder.Services.AddControllersWithViews();
 
