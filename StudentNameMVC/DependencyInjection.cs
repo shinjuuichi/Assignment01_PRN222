@@ -12,8 +12,6 @@ namespace StudentNameMVC
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSqlServer<FunewsManagementContext>(configuration.GetConnectionString("DefaultString"));
-
             services.AddScoped<CategoryDAO>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();

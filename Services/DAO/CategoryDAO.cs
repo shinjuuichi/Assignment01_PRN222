@@ -8,13 +8,13 @@ namespace DataAccess.DAO
     {
         private FunewsManagementContext _context;
 
+        public void InitializeContext(FunewsManagementContext context)
+        {
+            _context = context;
+        }
+
         public IEnumerable<Category> GetAllCategories(bool includeInactive = false)
         {
-            if (_context == null)
-            {
-                throw new InvalidOperationException("Database context is not initialized.");
-            }
-
             var query = _context.Categories
                 .Include(c => c.ParentCategory)
                 .Include(c => c.InverseParentCategory)

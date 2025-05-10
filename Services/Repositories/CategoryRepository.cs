@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Models;
+﻿using BusinessLogic;
+using BusinessLogic.Models;
 using DataAccess.DAO;
 using DataAccess.Repositories.Interface;
 
@@ -7,6 +8,12 @@ namespace DataAccess.Repositories
     public class CategoryRepository : ICategoryRepository
     {
         private readonly CategoryDAO _dao = CategoryDAO.Instance;
+
+        public CategoryRepository(FunewsManagementContext context)
+        {
+            _dao.InitializeContext(context);
+        }
+
         public void AddCategory(Category category)
         {
             _dao.AddCategory(category);
