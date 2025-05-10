@@ -10,15 +10,8 @@ namespace DataAccess.DAO
 {
     public class TagDAO : SingletonBase<TagDAO>
     {
-        private readonly FunewsManagementContext _context;
-        public TagDAO()
-        {
+        private FunewsManagementContext _context;
 
-        }
-        public TagDAO(FunewsManagementContext context)
-        {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
-        }
         public IEnumerable<Tag> GetAllTags()
         {
             return _context.Tags.ToList();

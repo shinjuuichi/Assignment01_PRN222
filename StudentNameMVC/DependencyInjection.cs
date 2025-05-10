@@ -16,7 +16,6 @@ namespace StudentNameMVC
 
             services.AddScoped<CategoryDAO>();
 
-            // Register repository interface and implementation
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             return services;
         }
